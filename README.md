@@ -1,30 +1,60 @@
-# Gaia
-Gaia is the first implementation of the Cosmos Hub, built using the [Cosmos SDK](https://github.com/cosmos/cosmos-sdk).  Gaia and other Cosmos Hubs allow fully sovereign blockchains to interact with one another using a protocol called [IBC](https://github.com/cosmos/ics/tree/master/ibc) that enables Inter-Blockchain Communication.
+# Kite Protocol
 
-[![codecov](https://codecov.io/gh/cosmos/gaia/branch/master/graph/badge.svg)](https://codecov.io/gh/cosmos/gaia)
-[![Go Report Card](https://goreportcard.com/badge/github.com/cosmos/gaia)](https://goreportcard.com/report/github.com/cosmos/gaia)
-[![license](https://img.shields.io/github/license/cosmos/gaia.svg)](https://github.com/cosmos/gaia/blob/master/LICENSE)
-[![LoC](https://tokei.rs/b1/github/cosmos/gaia)](https://github.com/cosmos/gaia)
-[![GolangCI](https://golangci.com/badges/github.com/cosmos/gaia.svg)](https://golangci.com/r/github.com/cosmos/gaia)
+```
+1. noun, slang: A message, note, or letter passed secretly or illegally to, from, or between prisoners.
+```
 
-## Documentation
+Kite is a community currency for enthusiasts of privacy preserving technologies. 
 
-Documentation for the Cosmos Hub lives at [hub.cosmos.network](https://hub.cosmos.network/main/hub-overview/overview.html).
+The Kite community uses a purpose-built ledger for such coins, based on the CosmosSDK.
 
-## Talk to us!
+Freely mine some coins by operating blockchain nodes. There's no premine, or permission needed to join.
 
-We have active, helpful communities on Twitter, Discord, and Telegram.
+## Testnet
+Testnets are created in a decentralized manner requiring no permission: just submit a proof of work (more below) when registration opens.
 
-* [Discord](https://discord.gg/huHEBUX)
-* [Twitter](https://twitter.com/cosmos)
-* [Telegram](https://t.me/cosmosproject)
+Testnets preserve state: Coins created in each testnet iteration, e.g chain ids: alpha, bravo, charlie,  are rolled over into the next test net.
 
-## Archives && Genesis
+Participants in each network have an opportunity to recreate data and coins from from a previous test-net account to a new one. Unclaimed Kite coins in testnets are sent to a BURN account, in a new genesis.
 
-With each version of the Cosmos Hub, the chain is restarted from a new Genesis state. This version will be used to upgrade `cosmoshub-3` to `cosmoshub-4`. Mainnet is currently running as `cosmoshub-3`. Archives of the state of `cosmoshub-1` and `cosmoshub-2` are available [here](./docs/resources/archives.md).
+## Genesis
+Users must submit a proof of work together with a genesis registration. The proof of work artifact is a json file with two fields: preimage, and sha2 hash.
 
-If you are looking for historical genesis files and other data [`cosmos/launch`](http://github.com/cosmos/launch) is an excellent resource.
+To create such a file a participant must run a miner producing a proof that achieve the following:
 
-## Disambiguation
+- Inputs (preimage), concatenated:
+  - public key,
+  - hex-encoded chain-id,
+  - nonce
 
-Gaia is not related to the [React-Cosmos](https://github.com/react-cosmos/react-cosmos) project (yet). Many thanks to Evan Coury and Ovidiu (@skidding) for this Github organization name. Per our agreement, this disambiguation notice will stay here.
+- Outputs (hash): A hash with 5 leading zeros.
+
+The miner may increment the nonce in multiple attempts to yield a result.
+
+## Rules for the ledger
+A validator operates computer hardware which engages in consensus, a group of these is a validator set.
+Epochs, or consensus intervals, last 24 hours, at which time a new validator set is chosen.
+
+Active validators have voting power proportionate to the value of assets in account (i.e. no bonding is necessary).
+
+New coins are created by the ledger only when rewards are granted by the system for database consensus work performed.  The base of coins inflates, they are minted to validators based on a fixed 10% per year inflation schedule, divided equally among participating validators of a given epoch..
+
+No payment is necessary to join the network. Coins can be mined by submitting proofs at genesis, or when joining the network.
+
+The native Kite coin is transferable up to a certain safety limit per epoch. This safety limit increases progressively according to a predefined schedule.
+
+## Governance
+There is no governance. This is for everyone's safety.  Make your voice known in this github. Conduct polls if you want your idea incorporated.
+
+## DAO
+There is no Dao. This is for everyone's safety.
+
+## Permission
+There is no permission.
+
+## Privacy
+Do not link your previous identity, and reputation to this project. This is for everyone's safety.
+
+Contributions are accepted from anonymous accounts only. Perhaps use https://www.gitmask.com/
+
+Otherwise use a single-use github account, with single-use email accounts, like the account that created this, and the admins here.
