@@ -1,5 +1,8 @@
 # Kite Protocol
 
+<img align="center" src="kite.jpg">
+
+
 ```
 1. noun, slang: A message, note, or letter passed secretly or illegally to, from, or between prisoners.
 ```
