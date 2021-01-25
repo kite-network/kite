@@ -2,6 +2,8 @@ module github.com/cosmos/gaia/v3
 
 go 1.15
 
+replace github.com/cosmos/cosmos-sdk => /Users/adickson/Code_Kite/kite-repos/kite-cosmos-sdk
+
 require (
 	github.com/btcsuite/btcd v0.21.0-beta
 	github.com/btcsuite/btcutil v1.0.2
@@ -12,8 +14,8 @@ require (
 	github.com/rakyll/statik v0.1.7
 	github.com/spf13/cast v1.3.1
 	github.com/spf13/cobra v1.1.1
-	github.com/stretchr/testify v1.6.1
-	github.com/tendermint/tendermint v0.34.1
+	github.com/stretchr/testify v1.7.0
+	github.com/tendermint/tendermint v0.34.3
 	github.com/tendermint/tm-db v0.6.3
 )
 
